@@ -1,0 +1,16 @@
+{
+  "applicationName": "Musixmatch",
+  "main": {
+    "tabs": {
+      "home": "Home",
+      "play": "Play",
+      "contribute": "Contribute",
+      "identify": "Identify",
+      "search": "Search"
+    }
+  },
+  "home": {
+    "trendingThisWeek": "Trending this week",
+    "topRated": "Top Rated"
+  }
+}
