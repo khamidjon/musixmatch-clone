@@ -1,19 +1,19 @@
 # musixmatch_clone
 
-Musixmatch clone app.
+**Musixmatch Clone App.**
 
 ## Content
 
-In this repository, we are going to build Musixmatch Clone application. This project will involve some best practices and tools.
+In this repository, we are going to build **Musixmatch Clone** application. This project will involve some best practices and tools.
 
 The project:
-- follows Clean Architecture  
-- uses Elementary state management
-- uses go_router for navigation
-- get_it, injectable for dependency injection
-- dio, retrofit for rest api handling
-- hive for data storage
-- slang for language handling
+- follows **Clean Architecture**  
+- uses **Elementary** state management
+- uses **go_router** for navigation
+- **get_it, injectable** for dependency injection
+- **dio, retrofit** for rest api handling
+- **hive** for data storage
+- **slang** for language handling
 
 ## Quick start
 
