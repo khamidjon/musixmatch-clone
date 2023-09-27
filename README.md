@@ -1,16 +1,27 @@
 # musixmatch_clone
 
-A new Flutter project.
+Musixmatch clone app.
 
-## Getting Started
+## Content
 
-This project is a starting point for a Flutter application.
+In this repository, we are going to build Musixmatch Clone application. This project will involve some best practices and tools.
 
-A few resources to get you started if this is your first Flutter project:
+The project:
+- follows Clean Architecture  
+- uses Elementary state management
+- uses go_router for navigation
+- get_it, injectable for dependency injection
+- dio, retrofit for rest api handling
+- hive for data storage
+- slang for language handling
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Quick start
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+After cloning the repository you should:
+- you can get started by using the Flutter version specified in
+the [pubspec.yaml](pubspec.yaml) file and by running:
+
+```
+flutter packages pub run build_runner build --delete-conflicting-outputs
+cd packages/imdb_localization && flutter pub get && flutter pub run slang && cd ../../
+```
