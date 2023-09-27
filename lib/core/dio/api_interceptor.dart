@@ -1,6 +1,8 @@
+import 'dart:convert';
 import 'dart:developer';
 
 import 'package:dio/dio.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 const _baseHeaders = {
   'Content-Type': 'application/json',
@@ -14,6 +16,7 @@ class UnauthorizedRequestInterceptor extends QueuedInterceptor {
     RequestInterceptorHandler handler,
   ) {
     options.headers.addAll(_baseHeaders);
+    options.queryParameters.addAll({'apikey': dotenv.get('API_KEY')});
     log('${options.method} >>> ${options.uri}');
     log('Query parameters: ${options.queryParameters}');
     log('Request data: ${options.data}');
@@ -27,7 +30,17 @@ class UnauthorizedRequestInterceptor extends QueuedInterceptor {
   ) {
     log('${response.requestOptions.method} <<< ${response.requestOptions.uri}');
     log('Response data: ${response.data}');
-    super.onResponse(response, handler);
+    final customResponse = Response(
+      requestOptions: response.requestOptions,
+      headers: response.headers,
+      extra: response.extra,
+      statusCode: response.statusCode,
+      statusMessage: response.statusMessage,
+      data: jsonDecode(response.data)['message']['body'],
+      redirects: response.redirects,
+      isRedirect: response.isRedirect,
+    );
+    super.onResponse(customResponse, handler);
   }
 
   @override

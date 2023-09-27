@@ -12,7 +12,12 @@
 import 'package:dio/dio.dart' as _i3;
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
-import 'package:musixmatch_clone/core/dio/dio_module.dart' as _i4;
+import 'package:musixmatch_clone/core/dio/dio_module.dart' as _i7;
+import 'package:musixmatch_clone/data/remote/tracks_api.dart' as _i4;
+import 'package:musixmatch_clone/data/repositories/tracks_repository_impl.dart'
+    as _i6;
+import 'package:musixmatch_clone/domain/repositories/tracks_repository.dart'
+    as _i5;
 
 extension GetItInjectableX on _i1.GetIt {
 // initializes the registration of main-scope dependencies inside of GetIt
@@ -27,8 +32,11 @@ extension GetItInjectableX on _i1.GetIt {
     );
     final dioModule = _$DioModule();
     gh.singleton<_i3.Dio>(dioModule.getUnauthorizedDioClient());
+    gh.singleton<_i4.TracksApi>(_i4.TracksApi(gh<_i3.Dio>()));
+    gh.singleton<_i5.TracksRepository>(
+        _i6.TracksRepositoryImpl(gh<_i4.TracksApi>()));
     return this;
   }
 }
 
-class _$DioModule extends _i4.DioModule {}
+class _$DioModule extends _i7.DioModule {}

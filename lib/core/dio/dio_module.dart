@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:musixmatch_clone/core/dio/api_interceptor.dart';
 import 'package:injectable/injectable.dart';
 
-const _baseUrl = "https://api.themoviedb.org/3";
+const _baseUrl = "https://api.musixmatch.com/ws/1.1/";
 const _requestTimeOutInSeconds = Duration(seconds: 7);
 
 @module
