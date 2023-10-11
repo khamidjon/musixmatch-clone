@@ -20,9 +20,9 @@ class HomeScreen extends ElementaryWidget<IHomeScreenWM> {
               padding: const EdgeInsets.only(left: 16.0),
               child: Row(
                 children: [
-                  const Expanded(
+                  Expanded(
                     child: Text(
-                      'Top 50 Uzbekistan',
+                      wm.tr.home.top50,
                       style: AppTypography.title,
                     ),
                   ),
